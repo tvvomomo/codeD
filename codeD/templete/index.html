@@ -1,0 +1,17 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Brain Strom</title>
+	
+	<link href="style.css" rel="stylesheet" type="text/css">
+	
+</head>
+<body>
+	<p><b>{{random_word.word_name}}</b></p>
+	{% for word in random_word.related_word.all %}
+		<p>{{word.word_name}}</p>
+	
+	
+	{% endfor %}
+</body>
+</html>

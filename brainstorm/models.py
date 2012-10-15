@@ -6,7 +6,6 @@ class KeyWord(models.Model):
 	
 	word_name = models.CharField(max_length = 30, unique = True)
 	create_date = models.DateTimeField(auto_now_add = True)
-#	creater = model.ForeignKey(User)
 	link = models.URLField(blank = True)
 	related_word = models.ManyToManyField("self", blank = True)
 	
