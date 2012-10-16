@@ -9,7 +9,7 @@
 <body>
 	<p><b>{{random_word.word_name}}</b></p>
 	{% for word in random_word.related_word.all %}
-		<p>{{word.word_name}}</p>
+		<p><a href="/word/{{word.id}}/">{{word.word_name}}</a></p>
 	
 	
 	{% endfor %}
