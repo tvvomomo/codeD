@@ -11,5 +11,5 @@ def index(request):
 	
 def showWord(request, key_word_id):
 	key_word = KeyWord.objects.get(id=int(key_word_id))
-	return render_to_response('index.html', {'random_word': key_word})
+	return render_to_response('word.html', {'key_word': key_word})
 	
