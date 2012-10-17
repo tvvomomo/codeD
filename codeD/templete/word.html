@@ -1,0 +1,15 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Brain Strom</title>
+	
+	<link href="style.css" rel="stylesheet" type="text/css">
+	
+</head>
+<body>
+	<p><b>{{key_word.word_name}}</b></p>
+	{% for word in key_word.related_word.all %}
+		<p><a href="/word/{{word.id}}/">{{word.word_name}}</a></p>
+	{% endfor %}
+</body>
+</html>
