@@ -7,21 +7,26 @@
 	
 </head>
 <body>
-<div class="hero-unit">
-	<h1>{{key_word.word_name}}</h1>
-	<p>What can you think of?</p>
-</div>
-	
-
 	<div class="container">
+	<div class="paper-header">
+		<h1>{{key_word.word_name}}
+		<small>What can you think of?</small></h1>
+	</div>
+	<div>
+
 	{% for word in key_word.related_word.all %}
 		<p><a href="/word/{{word.id}}/">{{word.word_name}}</a></p>
 	{% endfor %}
+	</div>
+	
+	<div>
 	<form action="" method="post">
 		{{form.as_p}}
 		<p><input type="submit" value="Submit" class="btn btn-primary"></p>
 	</form>
 	
+	
+	</div>
 	<ul class="pager">
 	  <li><a href="/">Home</a></li>
 	</ul>

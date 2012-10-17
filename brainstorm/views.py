@@ -42,15 +42,3 @@ def showWord(request, key_word_id):
 		
 	return render_to_response('word.html', {'key_word': key_word, 'form': form})
 
-
-
-'''
-add apple to python's related_word:
-
-python = KeyWord.objects.get(word_name='Python')
-apple = KeyWord.objects.get(word_name='apple')
-
-python.related_word.add(apple)
-
-'''
-
