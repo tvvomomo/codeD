@@ -26,10 +26,16 @@ def showWord(request, key_word_id):
 		form = AddWordForm(request.POST)
 		if form.is_valid():
 			word = form.cleaned_data['word']
-		#	link = form.cleaned_data['link']
-			
-			newWord = KeyWord.objects.get(word_name=word)
-			key_word.related_word.add(newWord)
+			# Check if word exist
+			if(KeyWord.objects.filter(word_name=word).count()):
+				newWord = KeyWord.objects.get(word_name=word)
+				key_word.related_word.add(newWord)
+			else:
+				# else create a new word
+				w = KeyWord(word_name=word)
+				w.save()
+				key_word.related_word.add(KeyWord.objects.get(word_name=word))
+				
 	else:
 		form = AddWordForm()
 		
