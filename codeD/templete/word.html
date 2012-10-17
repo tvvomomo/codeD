@@ -10,5 +10,14 @@
 	{% for word in key_word.related_word.all %}
 		<p><a href="/word/{{word.id}}/">{{word.word_name}}</a></p>
 	{% endfor %}
+	
+	
+	<div class="">
+	<form action="" method="post">
+		{{form.as_p}}
+		<p><input type="submit" value="Submit"></p>
+	</form>
+	
+	</div>
 </body>
 </html>
