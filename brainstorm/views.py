@@ -12,4 +12,17 @@ def index(request):
 def showWord(request, key_word_id):
 	key_word = KeyWord.objects.get(id=int(key_word_id))
 	return render_to_response('index.html', {'random_word': key_word})
-	
+
+
+
+
+
+'''
+add apple to python's related_word:
+
+python = KeyWord.objects.get(word_name='Python')
+apple = KeyWord.objects.get(word_name='apple')
+
+python.related_word.add(apple)
+
+'''
