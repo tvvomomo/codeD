@@ -1,21 +1,25 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Brain Strom</title>	
-	<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
 	
 </head>
 <body>
-	<p><b>{{key_word.word_name}}</b></p>
+<div class="hero-unit">
+	<h1>{{key_word.word_name}}</h1>
+	<p>What can you think of?</p>
+</div>
+	
+
+	<div class="container">
 	{% for word in key_word.related_word.all %}
 		<p><a href="/word/{{word.id}}/">{{word.word_name}}</a></p>
 	{% endfor %}
-	
-	
-	<div class="">
 	<form action="" method="post">
 		{{form.as_p}}
-		<p><input type="submit" value="Submit"></p>
+		<p><input type="submit" value="Submit" class="btn btn-primary"></p>
 	</form>
 	
 	</div>

@@ -1,14 +1,17 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Brain Strom</title>
-	<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
 
-<div class="span9">
-	<h1>Now we have {{total_words}} words!</h1>
-	<a class="btn btn-primary" href="/word/{{random_word.id}}/">Get a word</a>
+<div class="hero-unit">
+	<h1>Brain Strom</h1>
+	<p>Now we have {{total_words}} words!</p>
+	<a class="btn btn-primary btn-large" href="/word/{{random_word.id}}/">Get a word</a>
 </div>
+
 </body>
 </html>
