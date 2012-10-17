@@ -35,6 +35,7 @@ def showWord(request, key_word_id):
 				w = KeyWord(word_name=word)
 				w.save()
 				key_word.related_word.add(KeyWord.objects.get(word_name=word))
+			form = AddWordForm()
 				
 	else:
 		form = AddWordForm()
