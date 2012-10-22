@@ -19,12 +19,15 @@
 	{% endfor %}
 	</div>
 	
+	{% if log_in  %}
 	<div>
 	<form action="" method="post">
 		{{form.as_p}}
 		<p><input type="submit" value="Submit" class="btn btn-primary"></p>
 	</form>
-	
+	{% else %}
+	<button class="btn btn-primary">Login to Add word</button>
+	{% endif %}
 	
 	</div>
 	<ul class="pager">

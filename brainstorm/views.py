@@ -5,8 +5,6 @@ from django.shortcuts import render_to_response
 from random import randint
 
 
-
-
 def index(request):
 	
 	total_words = KeyWord.objects.all().count()
@@ -18,6 +16,12 @@ def index(request):
 	
 def showWord(request, key_word_id):
 	
+	# Check login Status
+	if request.user.is_authenticated():
+		log_in = True
+	else:
+		log_in = False
+		
 	# Get the word
 	key_word = KeyWord.objects.get(id=int(key_word_id))
 	
@@ -40,5 +44,4 @@ def showWord(request, key_word_id):
 	else:
 		form = AddWordForm()
 		
-	return render_to_response('word.html', {'key_word': key_word, 'form': form})
-
+	return render_to_response('word.html', {'key_word': key_word, 'form': form, 'log_in': log_in})

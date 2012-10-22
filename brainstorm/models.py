@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 class KeyWord(models.Model):
@@ -8,6 +8,7 @@ class KeyWord(models.Model):
 	create_date = models.DateTimeField(auto_now_add = True)
 	link = models.URLField(blank = True)
 	related_word = models.ManyToManyField("self", blank = True)
+	creater = models.ForeignKey(User)
 	
 	def rel_word(self):
 		return " , ".join(a.word_name for a in self.related_word.all())

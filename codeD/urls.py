@@ -15,4 +15,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'brainstorm.views.index'),
     url(r'^word/(\d+)/$', 'brainstorm.views.showWord'),
+    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
 )
